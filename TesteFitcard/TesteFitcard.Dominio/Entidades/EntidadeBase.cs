@@ -11,8 +11,8 @@ namespace TesteFitcard.Dominio.Entidades
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
         public DateTime DataCadastro { get; set; }
-        public DateTime DataAtualizacao { get; set; }
-        public DateTime DataExclusao { get; set; }
+        public DateTime? DataAtualizacao { get; set; }
+        public DateTime? DataExclusao { get; set; }
         public bool Excluido { get; set; }
         public bool Ativo { get; set; }
     }

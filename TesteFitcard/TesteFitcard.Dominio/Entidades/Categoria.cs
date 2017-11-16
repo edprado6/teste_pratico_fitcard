@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace TesteFitcard.Dominio.Entidades
 {
-    class Categoria
+    /// <summary>
+    /// Classe que repreesenta a entidade Categoria (de estabelecimentos comerciais).
+    /// </summary>
+    public class Categoria : EntidadeBase
     {
+        public string NomeCategoria { get; set; }
     }
 }
