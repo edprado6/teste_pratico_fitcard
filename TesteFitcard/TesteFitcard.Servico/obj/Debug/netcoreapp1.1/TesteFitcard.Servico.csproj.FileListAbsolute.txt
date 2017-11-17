@@ -1,0 +1,5 @@
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.deps.json
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Repositorio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.AssemblyInfo.cs
