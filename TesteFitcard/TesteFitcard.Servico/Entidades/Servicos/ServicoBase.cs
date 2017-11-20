@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using TesteFitcard.Dominio.Filtros;
 using TesteFitcard.Repositorio.Interfaces;
 using TesteFitcard.Servico.Entidades.Interfaces;
 
@@ -76,8 +77,9 @@ namespace TesteFitcard.Servico.Entidades.Servicos
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        //public KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro)
-        //{
-        //    return RepositorioBase.Filtra(filtro);
-    }    
+        public KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro)
+        {
+            return RepositorioBase.Filtra(filtro);
+        }
+    }
 }

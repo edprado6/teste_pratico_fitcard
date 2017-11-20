@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.Dominio", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.Repositorio", "TesteFitcard.Repositorio\TesteFitcard.Repositorio.csproj", "{808E7EE4-5E58-40FC-8188-CCF39C65FDD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteFitcard.Servico", "TesteFitcard.Servico\TesteFitcard.Servico.csproj", "{C0D5EB8B-7DF9-48E3-9C67-29BD5BA170BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.Servico", "TesteFitcard.Servico\TesteFitcard.Servico.csproj", "{C0D5EB8B-7DF9-48E3-9C67-29BD5BA170BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.WebApi", "TesteFitcard.WebApi\TesteFitcard.WebApi.csproj", "{D83429F3-19BC-4404-964F-2724DF6781CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.UI", "TesteFitcard.UI\TesteFitcard.UI.csproj", "{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteFitcard.DominioViewModel", "TesteFitcard.DominioViewModel\TesteFitcard.DominioViewModel.csproj", "{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{C0D5EB8B-7DF9-48E3-9C67-29BD5BA170BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0D5EB8B-7DF9-48E3-9C67-29BD5BA170BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0D5EB8B-7DF9-48E3-9C67-29BD5BA170BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83429F3-19BC-4404-964F-2724DF6781CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83429F3-19BC-4404-964F-2724DF6781CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83429F3-19BC-4404-964F-2724DF6781CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83429F3-19BC-4404-964F-2724DF6781CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

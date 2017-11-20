@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
+using TesteFitcard.Dominio.Filtros;
 using TesteFitcard.Repositorio.Interfaces;
 
 namespace TesteFitcard.Repositorio.Repositorios
@@ -91,13 +91,13 @@ namespace TesteFitcard.Repositorio.Repositorios
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        //public KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro)
-        //{
-        //    var query = Db.Set<TEntity>().AsNoTracking().Where(filtro.predicate.Compile());
-        //    var quantidadeRegistros = query.Count();
-        //    var registros = query.Skip((filtro.pagina - 1) * filtro.registrosPorPagina).Take(filtro.registrosPorPagina);
-        //    return new KeyValuePair<int, IEnumerable<TEntity>>(quantidadeRegistros, registros);
-        //}
+        public KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro)
+        {
+            var query = Db.Set<TEntity>().AsNoTracking().Where(filtro.Predicate.Compile());
+            var quantidadeRegistros = query.Count();
+            var registros = query.Skip((filtro.Pagina - 1) * filtro.RegistrosPorPagina).Take(filtro.RegistrosPorPagina);
+            return new KeyValuePair<int, IEnumerable<TEntity>>(quantidadeRegistros, registros);
+        }
 
         /// <summary>
         /// Remove (remoção física) um registro.

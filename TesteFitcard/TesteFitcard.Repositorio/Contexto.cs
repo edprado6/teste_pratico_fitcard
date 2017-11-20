@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MySQL.Data.EntityFrameworkCore.Extensions;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using TesteFitcard.Dominio.Entidades;
+
 
 namespace TesteFitcard.Repositorio
 {
@@ -13,7 +15,7 @@ namespace TesteFitcard.Repositorio
     /// </summary>
     public class Contexto : DbContext
     {
-        public DbSet<Estabelecimento> Estabelecimento { get; set; }
+        //public DbSet<Estabelecimento> Estabelecimento { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
 
         /// <summary>

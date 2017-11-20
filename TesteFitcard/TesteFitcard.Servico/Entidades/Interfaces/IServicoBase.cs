@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TesteFitcard.Dominio.Filtros;
 
 namespace TesteFitcard.Servico.Entidades.Interfaces
 {
@@ -39,7 +40,7 @@ namespace TesteFitcard.Servico.Entidades.Interfaces
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        //KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro);
+        KeyValuePair<int, IEnumerable<TEntity>> Filtra(FiltroBase<TEntity> filtro);
 
         /// <summary>
         /// Remove um registro.

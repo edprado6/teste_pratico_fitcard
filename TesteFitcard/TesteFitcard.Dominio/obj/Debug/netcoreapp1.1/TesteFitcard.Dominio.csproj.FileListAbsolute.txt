@@ -1,0 +1,7 @@
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.deps.json
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\obj\Debug\netcoreapp1.1\TesteFitcard.Dominio.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\obj\Debug\netcoreapp1.1\TesteFitcard.Dominio.AssemblyInfo.cs
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\obj\Debug\netcoreapp1.1\TesteFitcard.Dominio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Dominio\obj\Debug\netcoreapp1.1\TesteFitcard.Dominio.pdb
