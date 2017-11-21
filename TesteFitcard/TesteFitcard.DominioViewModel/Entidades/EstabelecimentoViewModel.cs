@@ -1,11 +1,14 @@
 ﻿
+using TesteFitcard.DominioViewModel.Validadores;
+
 namespace TesteFitcard.DominioViewModel.Entidades
 {
     /// <summary>
     /// Classe que representa a entidade Estabelecimento (comercial).
     /// </summary>
+    [FluentValidation.Attributes.Validator(typeof(EstabelecimentoViewModelValidador))]
     public class EstabelecimentoViewModel : EntidadeBaseViewModel
-    {
+    {       
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
         public string Cnpj { get; set; }

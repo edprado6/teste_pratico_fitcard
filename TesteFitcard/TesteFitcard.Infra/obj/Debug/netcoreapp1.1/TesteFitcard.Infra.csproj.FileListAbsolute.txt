@@ -1,0 +1,7 @@
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.deps.json
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\obj\Debug\netcoreapp1.1\TesteFitcard.Infra.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\obj\Debug\netcoreapp1.1\TesteFitcard.Infra.AssemblyInfo.cs
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\obj\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Infra\obj\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb

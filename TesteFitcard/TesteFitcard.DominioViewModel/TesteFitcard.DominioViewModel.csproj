@@ -4,4 +4,18 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Filters\**" />
+    <EmbeddedResource Remove="Filters\**" />
+    <None Remove="Filters\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="6.4.0-beta8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TesteFitcard.Infra\TesteFitcard.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

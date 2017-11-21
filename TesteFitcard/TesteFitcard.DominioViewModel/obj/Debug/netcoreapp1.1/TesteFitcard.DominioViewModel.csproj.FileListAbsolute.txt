@@ -5,3 +5,5 @@ C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\obj
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\obj\Debug\netcoreapp1.1\TesteFitcard.DominioViewModel.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\obj\Debug\netcoreapp1.1\TesteFitcard.DominioViewModel.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\obj\Debug\netcoreapp1.1\TesteFitcard.DominioViewModel.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.DominioViewModel\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb

@@ -7,6 +7,7 @@ using TesteFitcard.Dominio.Filtros;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
 using TesteFitcard.Servico.Entidades.Interfaces;
+using TesteFitcard.WebApi.Filters;
 
 namespace TesteFitcard.WebApi.Controllers
 {
@@ -83,6 +84,7 @@ namespace TesteFitcard.WebApi.Controllers
         /// <param name="estabelecimentoViewModel"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateInput]
         public IActionResult Post([FromBody]EstabelecimentoViewModel estabelecimentoViewModel)
         {
             try
@@ -107,6 +109,7 @@ namespace TesteFitcard.WebApi.Controllers
         /// <param name="estabelecimentoViewModel"></param>
         /// <returns></returns>
         [HttpPut]
+        [ValidateInput]
         public IActionResult Put([FromBody]EstabelecimentoViewModel estabelecimentoViewModel)
         {
             try

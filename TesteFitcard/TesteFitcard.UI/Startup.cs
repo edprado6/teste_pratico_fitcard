@@ -67,7 +67,8 @@ namespace TesteFitcard.UI
         /// <param name="services"></param>
         public static void InjecaoDependenciaServicosRest(ref IServiceCollection services)
         {
-            services.AddSingleton<ICategoriaClient, CategoriaClient>();            
+            services.AddSingleton<ICategoriaClient, CategoriaClient>();
+            services.AddSingleton<IEstabelecimentoClient, EstabelecimentoClient>();
         }
     }
 }

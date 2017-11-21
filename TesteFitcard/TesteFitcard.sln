@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.WebApi", "Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.UI", "TesteFitcard.UI\TesteFitcard.UI.csproj", "{B1FC64FD-4171-4BD3-BE2E-883B6952FF94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteFitcard.DominioViewModel", "TesteFitcard.DominioViewModel\TesteFitcard.DominioViewModel.csproj", "{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteFitcard.DominioViewModel", "TesteFitcard.DominioViewModel\TesteFitcard.DominioViewModel.csproj", "{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteFitcard.Infra", "TesteFitcard.Infra\TesteFitcard.Infra.csproj", "{F06D5570-6D9F-4A57-99AD-7C45A5866FA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B285B77-49F5-440A-AA1D-5BCB7FF5FDF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06D5570-6D9F-4A57-99AD-7C45A5866FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06D5570-6D9F-4A57-99AD-7C45A5866FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06D5570-6D9F-4A57-99AD-7C45A5866FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06D5570-6D9F-4A57-99AD-7C45A5866FA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

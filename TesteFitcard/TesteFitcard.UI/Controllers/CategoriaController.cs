@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
+using TesteFitcard.Infra.Validacoes;
 using TesteFitcard.UI.RestClient.Interfaces;
 
 namespace TesteFitcard.UI.Controllers
@@ -27,12 +28,22 @@ namespace TesteFitcard.UI.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
+            var cnpjValido1 = ValidaCNPJ.CnpjIsValid("00881753000153");
+            var cnpjValido2 = ValidaCNPJ.CnpjIsValid("19861350000170");
+            var cnpjValido3 = ValidaCNPJ.CnpjIsValid("19861350000413");
+            var cnpjValido4 = ValidaCNPJ.CnpjIsValid("19861350000251");
+
+            var cnpjInvalido1 = ValidaCNPJ.CnpjIsValid("00881753000154");
+            var cnpjInvalido2 = ValidaCNPJ.CnpjIsValid("19861350000171");
+            var cnpjInvalido3 = ValidaCNPJ.CnpjIsValid("19861350000414");
+            var cnpjInvalido4 = ValidaCNPJ.CnpjIsValid("19861350000252");
+
             var filtro = new CategoriaFiltroViewModel()
             {
                 NomeCategoria = "Far",
                 RegistrosPorPagina = 30
             };
-            var data = _categoriaClient.GetFiltro("categoria", filtro);
+            var data = _categoriaClient.GetSelect("categoria", filtro);
             return View(data);
         }
 
@@ -67,7 +78,7 @@ namespace TesteFitcard.UI.Controllers
 
             var categoria = new CategoriaViewModel()
             {
-                Id = "963b3181-4728-4c0c-88d6-30ea1b3bf625",
+                Id = "f529be70-9d3f-4549-b9f4-ae22a266a9a0",
                 NomeCategoria = "Supermercado",
                 Ativo = true,
                 Excluido = false

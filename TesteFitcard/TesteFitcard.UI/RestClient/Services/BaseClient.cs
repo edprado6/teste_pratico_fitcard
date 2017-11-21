@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -98,8 +100,13 @@ namespace TesteFitcard.UI.RestClient.Services
                 client.DefaultRequestHeaders.Accept.Add(contentType);
                 HttpResponseMessage response = client.PostAsync(urlResource, content).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
-                TEntity data = JsonConvert.DeserializeObject<TEntity>(stringData);
-                return data;
+                if (response.IsSuccessStatusCode)
+                {
+                    TEntity data = JsonConvert.DeserializeObject<TEntity>(stringData);
+                    return data;
+                }
+                var erros = JsonConvert.DeserializeObject(stringData);
+                return null;
             }
         }
 
@@ -144,6 +151,30 @@ namespace TesteFitcard.UI.RestClient.Services
                 HttpResponseMessage response = client.DeleteAsync(urlResource).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 TEntity data = JsonConvert.DeserializeObject<TEntity>(stringData);               
+            }
+        }
+
+        /// <summary>
+        /// Realiza uma chamada GET buscando um objeto pelo seu id.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<SelectListItem> GetSelect(string url, object filtro)
+        {
+            string urlResource = _urlBaseApi + _config["urlsApi:" + url] + "/" + _config["urlsApi:select"];
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(urlResource);
+                var json = JsonConvert.SerializeObject(filtro);
+                var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+                client.DefaultRequestHeaders.Accept.Add(contentType);
+                HttpResponseMessage response = client.PostAsync(urlResource, content).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                var data = JsonConvert.DeserializeObject<IEnumerable<SelectListItem>>(stringData);
+                return data;
             }
         }
     }

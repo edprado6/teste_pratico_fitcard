@@ -154,6 +154,29 @@ namespace TesteFitcard.WebApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Retorna um SelectListem contendo as categorias ativas para montagem de select.
+        /// </summary>
+        /// <param name="filtro"></param>
+        /// <returns></returns>       
+        [HttpPost("select")]        
+        public IActionResult Select([FromBody]CategoriaFiltroViewModel filtro)
+        {
+            try
+            {
+                CategoriaFiltro filter = _mapper.Map<CategoriaFiltroViewModel, CategoriaFiltro>(filtro);
+                return Ok(_categoriaServico.Select(filter));
+            }
+            catch (ArgumentNullException e)
+            {
+                return NotFound(e.Message);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
 

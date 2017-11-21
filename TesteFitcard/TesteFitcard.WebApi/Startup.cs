@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using MySQL.Data.EntityFrameworkCore.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using TesteFitcard.DominioViewModel.Validadores;
 using TesteFitcard.Servico;
 
 
@@ -60,6 +62,9 @@ namespace TesteFitcard.WebApi
                     // include $id property in the output
                     //options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
                 });
+
+            services.AddMvc().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<EstabelecimentoViewModelValidador>());
+            services.AddMvc().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CategoriaViewModelValidador>());
 
             var sqlConnectionString = Configuration.GetConnectionString("DefaultConnection");
 

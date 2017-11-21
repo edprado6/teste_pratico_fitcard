@@ -15,7 +15,7 @@ namespace TesteFitcard.Repositorio
     /// </summary>
     public class Contexto : DbContext
     {
-        //public DbSet<Estabelecimento> Estabelecimento { get; set; }
+        public DbSet<Estabelecimento> Estabelecimento { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
 
         /// <summary>
