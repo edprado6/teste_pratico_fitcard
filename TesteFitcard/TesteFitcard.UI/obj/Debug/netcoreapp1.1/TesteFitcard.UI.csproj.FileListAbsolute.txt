@@ -11,3 +11,5 @@ C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\obj\Debug\netcore
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\obj\Debug\netcoreapp1.1\TesteFitcard.UI.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\obj\Debug\netcoreapp1.1\TesteFitcard.UI.Resource.resources
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.UI\obj\Debug\netcoreapp1.1\TesteFitcard.UI.csproj.GenerateResource.Cache

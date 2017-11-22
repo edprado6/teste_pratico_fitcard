@@ -2,6 +2,9 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
+      "Correios.CEP.Net/1.1.0": {
+        "type": "package"
+      },
       "Google.Protobuf/3.3.0": {
         "type": "package",
         "dependencies": {
@@ -3730,6 +3733,17 @@
     }
   },
   "libraries": {
+    "Correios.CEP.Net/1.1.0": {
+      "sha512": "nUExXW5ork2x2C/9PB/4cEfiJzGhLUdgBWpBbi+S+0iEvWxUAyBjhJw/DsfO/dv/EThna2eh/FewxdG1KDq77g==",
+      "type": "package",
+      "path": "correios.cep.net/1.1.0",
+      "files": [
+        "Correios.Net.dll",
+        "Correios.Net.pdb",
+        "correios.cep.net.1.1.0.nupkg.sha512",
+        "correios.cep.net.nuspec"
+      ]
+    },
     "Google.Protobuf/3.3.0": {
       "sha512": "W0TsIYM2ED9dc/FgdbdtP68vUP1JdbwaFscG3DeVtJNlfm8A/ozjAT0H3dWIk0jJd9Zcx6B7XZ1LYERF8PqqJA==",
       "type": "package",
@@ -10017,6 +10031,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
+      "Correios.CEP.Net >= 1.1.0",
       "Microsoft.AspNetCore.Http >= 1.1.2",
       "Microsoft.AspNetCore.Mvc >= 1.1.3",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 1.0.0",
@@ -10068,9 +10083,13 @@
             "version": "1.1.2",
             "autoReferenced": true
           },
+          "Correios.CEP.Net": {
+            "target": "Package",
+            "version": "1.1.0"
+          },
           "Microsoft.AspNetCore.Mvc": {
             "target": "Package",
-            "version": "[1.1.3, )"
+            "version": "1.1.3"
           }
         }
       }

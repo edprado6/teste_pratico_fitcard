@@ -38,6 +38,9 @@
           "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Correios.CEP.Net/1.1.0": {
+        "type": "package"
+      },
       "FluentValidation/6.4.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -4208,6 +4211,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
+          "Correios.CEP.Net": "1.1.0",
           "Microsoft.AspNetCore.Http": "1.1.2",
           "Microsoft.AspNetCore.Mvc": "1.1.3",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
@@ -4246,6 +4250,17 @@
         "lib/net451/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard1.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+    "Correios.CEP.Net/1.1.0": {
+      "sha512": "nUExXW5ork2x2C/9PB/4cEfiJzGhLUdgBWpBbi+S+0iEvWxUAyBjhJw/DsfO/dv/EThna2eh/FewxdG1KDq77g==",
+      "type": "package",
+      "path": "correios.cep.net/1.1.0",
+      "files": [
+        "Correios.Net.dll",
+        "Correios.Net.pdb",
+        "correios.cep.net.1.1.0.nupkg.sha512",
+        "correios.cep.net.nuspec"
       ]
     },
     "FluentValidation/6.4.0-beta8": {

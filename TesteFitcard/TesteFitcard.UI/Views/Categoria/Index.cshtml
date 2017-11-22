@@ -1,5 +1,65 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using TesteFitcard.Infra.Strings;
+@{ 
+    var categorias = Model.Registros;
 }
+
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>@Resource.Categorias<small> @Resource.Listagem</small></h3>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">                    
+                    <div class="x_content">
+
+                        <a href="categoria/cadastrar" title="@Resource.Cadastrar" class="btn btn-primary"><i class="fa fa-plus"> @Resource.Cadastrar</i></a>
+                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                            <div class="input-group">
+                                <input type="text" name="termoBuscado" class="form-control" value="" placeholder="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Buscar</button>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <table id="example" class="table table-striped responsive-utilities jambo_table">
+                            <thead>
+                                <tr class="headings">                                    
+                                    <th>@Resource.NomeCategoria</th>
+                                    <th>@Resource.DataCadastro </th>
+                                    <th>@Resource.DataAtualizacao</th>
+                                    <th>@Resource.Status </th>
+                                    <th></th>                                    
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var categoria in categorias)
+                                {
+                                    <tr class="even pointer">
+                                        <td>@categoria.NomeCategoria</td>
+                                        <td>@categoria.DataCadastro</td>                                        
+                                        <td>@categoria.DataAtualizacao</td>
+                                        <td>@Html.Raw(Mascaras.RetornaAtivoInativo(categoria.Ativo))</td>
+                                        <td>
+                                            <a href="categoria/detalhes/@categoria.Id" title="@Resource.Detalhes" class="btn btn-xs btn-info"><i class="fa fa-search"></i></a>
+                                            <a href="categoria/editar/@categoria.Id" title="@Resource.Editar" class="btn btn-xs btn-success"><i class="fa fa-edit"></i></a>
+                                            <a href="#" title="@Resource.Excluir" class="btn btn-xs btn-danger btnExcluirCategoria" id="btnExcluirCategoria-@categoria.Id" data-nome="@categoria.NomeCategoria" data-url="categoria/delete/@categoria.Id"><i class="fa fa-close"></i>
+                                            </a>
+                                        </td>                                        
+                                    </tr>
+                                }  
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>

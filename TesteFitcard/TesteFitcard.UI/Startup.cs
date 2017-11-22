@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TesteFitcard.UI.RestClient.Interfaces;
 using TesteFitcard.UI.RestClient.Services;
+using FluentValidation.AspNetCore;
+using TesteFitcard.DominioViewModel.Validadores;
 
 namespace TesteFitcard.UI
 {
@@ -30,9 +32,12 @@ namespace TesteFitcard.UI
         public void ConfigureServices(IServiceCollection services)
         {
             InjecaoDependenciaServicosRest(ref services);
+            Validadores(ref services);
 
             // Add framework services.
             services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +57,7 @@ namespace TesteFitcard.UI
             }
 
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -69,6 +74,16 @@ namespace TesteFitcard.UI
         {
             services.AddSingleton<ICategoriaClient, CategoriaClient>();
             services.AddSingleton<IEstabelecimentoClient, EstabelecimentoClient>();
+        }
+
+        /// <summary>
+        /// Instancia as classes de validação.
+        /// </summary>
+        /// <param name="services"></param>
+        public static void Validadores(ref IServiceCollection services) {
+
+            services.AddMvc().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<EstabelecimentoViewModelValidador>());
+            services.AddMvc().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CategoriaViewModelValidador>());
         }
     }
 }

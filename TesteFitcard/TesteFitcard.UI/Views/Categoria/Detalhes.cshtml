@@ -1,16 +1,68 @@
+@model TesteFitcard.DominioViewModel.Entidades.CategoriaViewModel
+@using TesteFitcard.Infra.Strings;
 @{
     var categoria = Model;
     string nomeCategoria = (categoria != null) ? categoria.NomeCategoria : "";
 }
 
-<!DOCTYPE html>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2><i class="fa fa-plus"></i> @Resource.Detalhes</h2>
+                <div class="clearfix"></div>
+            </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Detalhes</title>
-   @nomeCategoria
-</head>
-<body>
-</body>
-</html>
+            <div class="x_content col-md-6 col-sm-6 col-xs-12">
+               
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Resource.Id:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt>
+                       @Resource.NomeCategoria:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NomeCategoria)
+                    </dd>                 
+                    <dt>
+                        @Resource.DataCadastro:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataCadastro)
+                    </dd>
+                    <dt>
+                        @Resource.DataAtualizacao:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataAtualizacao)
+                    </dd>
+                    <dt>
+                        @Resource.Status:
+                    </dt>
+                    <dd>
+                        @Html.Raw(Mascaras.RetornaAtivoInativo(categoria.Ativo))
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="x_content col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group col-md-12">                    
+                    <a href="~/categoria/editar/@categoria.Id" title="@Resource.Editar" class="btn btn-success"><i class="fa fa-pencil"></i>&nbsp;@Resource.Editar</a>                    
+                    <a asp-action="Index" title="@Resource.Cancelar" class="btn btn-danger"><i class="fa fa-close"></i>&nbsp;@Resource.Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

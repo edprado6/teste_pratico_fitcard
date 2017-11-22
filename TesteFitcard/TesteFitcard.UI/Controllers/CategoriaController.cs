@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
-using TesteFitcard.Infra.Validacoes;
+using TesteFitcard.Infra.Strings;
 using TesteFitcard.UI.RestClient.Interfaces;
 
 namespace TesteFitcard.UI.Controllers
@@ -26,25 +27,48 @@ namespace TesteFitcard.UI.Controllers
         /// Método que exxibe uma grid com as categorias cadastradas.
         /// </summary>
         /// <returns></returns>
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            var cnpjValido1 = ValidaCNPJ.CnpjIsValid("00881753000153");
-            var cnpjValido2 = ValidaCNPJ.CnpjIsValid("19861350000170");
-            var cnpjValido3 = ValidaCNPJ.CnpjIsValid("19861350000413");
-            var cnpjValido4 = ValidaCNPJ.CnpjIsValid("19861350000251");
-
-            var cnpjInvalido1 = ValidaCNPJ.CnpjIsValid("00881753000154");
-            var cnpjInvalido2 = ValidaCNPJ.CnpjIsValid("19861350000171");
-            var cnpjInvalido3 = ValidaCNPJ.CnpjIsValid("19861350000414");
-            var cnpjInvalido4 = ValidaCNPJ.CnpjIsValid("19861350000252");
-
             var filtro = new CategoriaFiltroViewModel()
-            {
-                NomeCategoria = "Far",
+            {               
                 RegistrosPorPagina = 30
             };
-            var data = _categoriaClient.GetSelect("categoria", filtro);
+            var data = _categoriaClient.GetFiltro("categoria", filtro);
             return View(data);
+        }
+
+        /// <summary>
+        /// Exibe formulário para cadastro de novas categorias.
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Cadastrar() {
+
+            return View();
+        }
+
+        /// <summary>
+        /// Recebe dados do formulário para inserção
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]        
+        public IActionResult Cadastrar(CategoriaViewModel categoriaViewModel)
+        {
+            if (ModelState.IsValid) {
+
+                var data = _categoriaClient.Post("categoria", categoriaViewModel);
+
+                if (data != null)
+                {
+                    TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroSalvoSucesso);
+                    return RedirectToAction("Index");
+                }
+
+                TempData["mensagem"] = Mensagens.MensagemFalha(Resource.UmErroAconteceu);
+                return View();
+            }
+
+            return View();
         }
 
         /// <summary>
@@ -52,46 +76,65 @@ namespace TesteFitcard.UI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public IActionResult Detalhes(string id) {
+        public IActionResult Editar(string id) {
 
             var data = _categoriaClient.Get("categoria", id);
             return View(data);
         }
 
-        
-
-        public IActionResult Post() {
-
-            var categoria = new CategoriaViewModel()
-            {
-                NomeCategoria = "Farmácia",
-                Ativo = true,
-                Excluido = false
-            };
-
-            var data = _categoriaClient.Post("categoria", categoria);
-            return View(data);
-        }
-   
-        public IActionResult Put()
+        /// <summary>
+        /// Recebe dados do formulário para atualização.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Editar(CategoriaViewModel categoriaViewModel)
         {
+            if (ModelState.IsValid) {
 
-            var categoria = new CategoriaViewModel()
-            {
-                Id = "f529be70-9d3f-4549-b9f4-ae22a266a9a0",
-                NomeCategoria = "Supermercado",
-                Ativo = true,
-                Excluido = false
-            };
+                var data = _categoriaClient.Put("categoria", categoriaViewModel);
 
-            var data = _categoriaClient.Put("categoria", categoria);
+                if (data != null)
+                {
+                    TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroAtualizadoSucesso);
+                    return RedirectToAction("Index");
+                }
+
+                TempData["mensagem"] = Mensagens.MensagemFalha(Resource.UmErroAconteceu);
+                return View();
+            }
+            
+            return View();
+        }
+
+        /// <summary>
+        /// Método que busca os detalhes de uma categoria a partir do seu id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult Detalhes(string id)
+        {
+            var data = _categoriaClient.Get("categoria", id);
             return View(data);
         }
 
+        /// <summary>
+        /// Recebe um id para realizar a remoção do registro.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Delete(string id)
-        {            
-            _categoriaClient.Delete("categoria", id);
-            return View();
+        {
+            try {
+
+                _categoriaClient.Delete("categoria", id);
+                TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroExcluidoSucesso);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e) {
+                TempData["mensagem"] = Mensagens.MensagemFalha(e.Message.ToString());
+                return View();
+            }
         }
     }
 }

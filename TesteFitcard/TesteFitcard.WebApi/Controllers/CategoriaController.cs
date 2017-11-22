@@ -8,6 +8,7 @@ using TesteFitcard.DominioViewModel;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
 using TesteFitcard.Servico.Entidades.Interfaces;
+using TesteFitcard.WebApi.Filters;
 
 namespace TesteFitcard.WebApi.Controllers
 {
@@ -89,6 +90,7 @@ namespace TesteFitcard.WebApi.Controllers
         /// <param name="categoriaViewModel"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateInput]
         public IActionResult Post([FromBody]CategoriaViewModel categoriaViewModel)
         {
             try

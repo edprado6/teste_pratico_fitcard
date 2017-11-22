@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TesteFitcard.Infra.Strings
+﻿namespace TesteFitcard.Infra.Strings
 {
     /// <summary>
     /// Classe de manipulação de strings responsável por colocar e retirar máscaras.
@@ -20,6 +16,16 @@ namespace TesteFitcard.Infra.Strings
             cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
 
             return cnpj;
+        }
+
+        /// <summary>
+        /// Recebe um status e retorna Ativo ou Inativo.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public static string RetornaAtivoInativo(bool status) {
+            
+            return (status) ? "<span class=\"label label-success\">Ativo</span>" : "<span class=\"label label-danger\">Inativo</span>";
         }
 
     }

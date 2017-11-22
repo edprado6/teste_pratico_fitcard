@@ -1,73 +1,198 @@
-﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TesteFitcard.UI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Resource.Titulo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/template-gentelella/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/template-gentelella/fonts/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/template-gentelella/css/animate.min.css" rel="stylesheet">
 
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-    @Html.Raw(JavaScriptSnippet.FullScript)
+    <link rel="stylesheet" href="~/css/bootstrap-switch.min.css" />
+    
+    <!-- Custom styling plus plugins -->
+    <link href="~/template-gentelella/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/template-gentelella/css/maps/jquery-jvectormap-2.0.3.css" />
+    <link href="~/template-gentelella/css/icheck/flat/green.css" rel="stylesheet" />
+    <link href="~/template-gentelella/css/floatexamples.css" rel="stylesheet" type="text/css" />
+    <script src="~/template-gentelella/js/jquery.min.js"></script>
+    <script src="~/template-gentelella/js/nprogress.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">TesteFitcard.UI</a>
+@{
+    var hoje = DateTime.Now;
+}
+<body class="nav-md">
+    <div class="container body">
+
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>@Resource.Titulo</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu prile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="~/template-gentelella/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <!-- /menu prile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-edit"></i> @Resource.Cadastros<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li>
+                                            <a href="/categoria">@Resource.Categorias</a>
+                                        </li>
+                                        <li>
+                                            <a href="/estabelecimento">@Resource.Estabelecimentos</a>
+                                        </li>                                        
+                                    </ul>
+                                </li>                         
+                            </ul>
+                        </div>
+                     
+                    </div>
+                    <!-- /sidebar menu -->
+                    
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.jpg" alt="">John Doe
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                    <li>
+                                        <a href="javascript:;">  Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>                            
+                        </ul>
+                    </nav>
+                </div>
             </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                
+                <!-- /top tiles -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        @Html.Raw(TempData["mensagem"])                       
+                        
+                        @RenderBody()
+                        
+                    </div>
+                </div>
+                <br />
+
+                <!-- footer content -->
+                <footer>
+                    <div class="copyright-info">
+                        <p class="pull-right">
+                            @Resource.Titulo @hoje.Year
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+            <!-- /page content -->
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - TesteFitcard.UI</p>
-        </footer>
     </div>
+    
+    <script src="~/template-gentelella/js/bootstrap.min.js"></script>
+    <!-- gauge js -->
+    @*<script type="text/javascript" src="~/template-gentelella/js/gauge/gauge.min.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/gauge/gauge_demo.js"></script>*@
+    <!-- bootstrap progress js -->
+    <script src="~/template-gentelella/js/progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/template-gentelella/js/nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- icheck -->
+    <script src="~/template-gentelella/js/icheck/icheck.min.js"></script>
+    
+    <script src="~/js/bootbox.min.js"></script>
+    <script src="~/js/bootstrap-switch.js"></script>
+    
+    <script src="~/js/site.js"></script>
+    <!-- JS específicos de cada CRUD -->
+    <script src="~/js/categoria/categoria.js"></script>
 
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <!-- daterangepicker -->
+    @*<script type="text/javascript" src="~/template-gentelella/js/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/datepicker/daterangepicker.js"></script>*@
+    
+    <!-- chart js -->
+    @*<script src="~/template-gentelella/js/chartjs/chart.min.js"></script>*@
+    <script src="~/template-gentelella/js/custom.js"></script>
+    
+    <!-- flot js -->
+    <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+    @*<script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.orderBars.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.time.min.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/date.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.spline.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.stack.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/curvedLines.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/flot/jquery.flot.resize.js"></script>*@   
+    <!-- worldmap -->
+    @*<script type="text/javascript" src="~/template-gentelella/js/maps/jquery-jvectormap-2.0.3.min.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/maps/gdp-data.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/maps/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="~/template-gentelella/js/maps/jquery-jvectormap-us-aea-en.js"></script>*@
+    <!-- pace -->
+    @*<script src="~/template-gentelella/js/pace/pace.min.js"></script>*@   
+    <!-- skycons -->
+    @*<script src="~/template-gentelella/js/skycons/skycons.min.js"></script>*@
+  
+    <!-- Datatables -->
+    <script src="~/template-gentelella/js/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/template-gentelella/js/datatables/tools/js/dataTables.tableTools.js"></script>
 
-    @RenderSection("Scripts", required: false)
+    <!-- pace -->
+    <script src="~/template-gentelella/js/pace/pace.min.js"></script>
+
+  
+
+    <!-- /footer content -->
 </body>
 </html>

@@ -89,7 +89,7 @@ namespace TesteFitcard.WebApi {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Teste Fitcard.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Teste FitCard.
         /// </summary>
         public static string TituloApi {
             get {
