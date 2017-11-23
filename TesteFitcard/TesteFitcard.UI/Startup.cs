@@ -74,6 +74,8 @@ namespace TesteFitcard.UI
         {
             services.AddSingleton<ICategoriaClient, CategoriaClient>();
             services.AddSingleton<IEstabelecimentoClient, EstabelecimentoClient>();
+
+            services.AddSingleton<ICorreiosClient, CorreiosClient>();
         }
 
         /// <summary>

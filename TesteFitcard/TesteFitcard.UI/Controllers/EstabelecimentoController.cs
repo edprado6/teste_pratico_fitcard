@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Net;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
 using TesteFitcard.Infra.Strings;
@@ -14,15 +15,17 @@ namespace TesteFitcard.UI.Controllers
     {
         private IEstabelecimentoClient _estabelecimentoClient { get; set; }
         private ICategoriaClient _categoriaClient { get; set; }
+        private ICorreiosClient _correiosClient { get; set; }
 
         /// <summary>
         /// Método construtor.
         /// </summary>
         /// <param name="estabelecimentoClient"></param>
-        public EstabelecimentoController(IEstabelecimentoClient estabelecimentoClient, ICategoriaClient categoriaClient)
+        public EstabelecimentoController(IEstabelecimentoClient estabelecimentoClient, ICategoriaClient categoriaClient, ICorreiosClient correiosClient)
         {
             _estabelecimentoClient = estabelecimentoClient;
             _categoriaClient = categoriaClient;
+            _correiosClient = correiosClient;
         }
 
         /// <summary>
@@ -147,6 +150,18 @@ namespace TesteFitcard.UI.Controllers
                 TempData["mensagem"] = Mensagens.MensagemFalha(e.Message.ToString());
                 return View();
             }
+        }
+
+        /// <summary>
+        /// Retorna endereço a partir de um CEP.
+        /// </summary>
+        /// <param name="cep"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult BuscaEndereco(string cep) {
+
+            var resposta = _correiosClient.BuscaEndereco(cep);
+            return Json(new { HttpStatusCode.OK, resposta });
         }
     }
 }

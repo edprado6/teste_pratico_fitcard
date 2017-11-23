@@ -8636,7 +8636,7 @@
         "dependencies": {
           "MySql.Data.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[8.0.8-dmr, )"
+            "version": "8.0.8-dmr"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

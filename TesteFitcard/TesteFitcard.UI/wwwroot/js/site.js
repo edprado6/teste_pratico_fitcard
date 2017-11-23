@@ -8,6 +8,7 @@ var nomeCategoriaObrigatorio = 'O campo Nome da Categoria deve ser informado.';
 var preenchimentoObrigatorio = 'Campo de preenchimento obrigatório.';
 var preenchaEmailValido = 'E-mail inválido.';
 var razaoSocialObrigatorio = 'O campo Razão Social deve ser informado.';
+var cepNaoEncontrado = 'CEP não encontrado.';
 
 
 

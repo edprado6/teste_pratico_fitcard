@@ -5,11 +5,13 @@ C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\net
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.WebApi.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.DominioViewModel.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Repositorio.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.DominioViewModel.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Repositorio.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\netcoreapp1.1\TesteFitcard.WebApi.csprojResolveAssemblyReference.cache
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\netcoreapp1.1\TesteFitcard.WebApi.Resource.resources
@@ -17,5 +19,3 @@ C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\net
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\netcoreapp1.1\TesteFitcard.WebApi.AssemblyInfo.cs
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\netcoreapp1.1\TesteFitcard.WebApi.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\obj\Debug\netcoreapp1.1\TesteFitcard.WebApi.pdb
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.dll
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.WebApi\bin\Debug\netcoreapp1.1\TesteFitcard.Infra.pdb

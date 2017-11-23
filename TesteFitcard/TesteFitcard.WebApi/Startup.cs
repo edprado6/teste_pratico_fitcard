@@ -11,7 +11,6 @@ using Newtonsoft.Json.Serialization;
 using TesteFitcard.DominioViewModel.Validadores;
 using TesteFitcard.Servico;
 
-
 namespace TesteFitcard.WebApi
 {
     public partial class Startup
@@ -79,6 +78,7 @@ namespace TesteFitcard.WebApi
             AdicionarSwagger(ref services);
             InjecaoDependencia.InjecaoDependenciaRepositorios(ref services);
             InjecaoDependencia.InjecaoDependenciaservicos(ref services);
+
         }
 
         /// <summary>

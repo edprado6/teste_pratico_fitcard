@@ -1,0 +1,6 @@
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\bin\Debug\TesteFitcard.ServicosExternos.dll.config
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\bin\Debug\TesteFitcard.ServicosExternos.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\bin\Debug\TesteFitcard.ServicosExternos.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\obj\Debug\TesteFitcard.ServicosExternos.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\obj\Debug\TesteFitcard.ServicosExternos.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.ServicosExternos\obj\Debug\TesteFitcard.ServicosExternos.pdb

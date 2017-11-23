@@ -1,3 +1,14 @@
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.csprojResolveAssemblyReference.cache
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.AssemblyInfo.cs
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Servico.deps.json
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Servico.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Servico.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Dominio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Repositorio.dll
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Dominio.pdb
+C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\TesteFitcard.Repositorio.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.deps.json
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Servico.pdb
@@ -5,7 +16,3 @@ C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\ne
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Repositorio.dll
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Dominio.pdb
 C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\bin\Debug\netcoreapp1.1\TesteFitcard.Repositorio.pdb
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.csprojResolveAssemblyReference.cache
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.AssemblyInfo.cs
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.dll
-C:\Projetos pessoais\TesteFitcard\TesteFitcard\TesteFitcard.Servico\obj\Debug\netcoreapp1.1\TesteFitcard.Servico.pdb

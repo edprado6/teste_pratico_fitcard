@@ -3,6 +3,8 @@ using TesteFitcard.Repositorio.Interfaces;
 using TesteFitcard.Repositorio.Repositorios;
 using TesteFitcard.Servico.Entidades.Interfaces;
 using TesteFitcard.Servico.Entidades.Servicos;
+using TesteFitcard.Servico.ServicosDiversos.Interfaces;
+using TesteFitcard.Servico.ServicosDiversos.Servicos;
 
 namespace TesteFitcard.Servico
 {
@@ -28,8 +30,11 @@ namespace TesteFitcard.Servico
         /// <param name="services"></param>
         public static void InjecaoDependenciaservicos(ref IServiceCollection services)
         {
-            services.AddSingleton<ICategoriaServico, CategoriaServico>();
+            services.AddSingleton<ICategoriaServico, CategoriaServico>();           
             services.AddSingleton<IEstabelecimentoServico, EstabelecimentoServico>();
+
+            // Serviços externos
+            services.AddSingleton<ICorreiosServico, CorreiosServico>();
         }
     }
 }
