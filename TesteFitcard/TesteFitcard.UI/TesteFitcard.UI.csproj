@@ -9,11 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\bootstrap-switch.min.css" />
+    <Content Remove="Views\Estabelecimento\_Formulario.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\css\bootstrap-switch.min.css" />
     <Content Include="wwwroot\js\bootbox.min.js" />
     <Content Include="wwwroot\js\bootstrap-switch.js" />
     <Content Include="wwwroot\js\categoria\categoria.js" />
+    <Content Include="wwwroot\js\categoria\formCategoria.js" />
+    <Content Include="wwwroot\js\estabelecimento\estabelecimento.js" />
+    <Content Include="wwwroot\js\estabelecimento\formEstabelecimento.js" />
+    <Content Include="wwwroot\js\jquery.validate.min.js" />
+    <Content Include="wwwroot\js\maskedinput.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

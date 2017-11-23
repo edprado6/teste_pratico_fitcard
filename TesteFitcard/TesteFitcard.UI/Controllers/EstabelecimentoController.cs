@@ -1,27 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using TesteFitcard.DominioViewModel.Filtros;
-using TesteFitcard.UI.RestClient.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using TesteFitcard.DominioViewModel.Entidades;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using TesteFitcard.DominioViewModel.Filtros;
+using TesteFitcard.Infra.Strings;
+using TesteFitcard.UI.RestClient.Interfaces;
 
 namespace TesteFitcard.UI.Controllers
 {
+    /// <summary>
+    /// Classe de interação com a entidade Estabelecimento.
+    /// </summary>
     public class EstabelecimentoController : Controller
     {
         private IEstabelecimentoClient _estabelecimentoClient { get; set; }
+        private ICategoriaClient _categoriaClient { get; set; }
 
         /// <summary>
         /// Método construtor.
         /// </summary>
         /// <param name="estabelecimentoClient"></param>
-        public EstabelecimentoController(IEstabelecimentoClient estabelecimentoClient)
+        public EstabelecimentoController(IEstabelecimentoClient estabelecimentoClient, ICategoriaClient categoriaClient)
         {
             _estabelecimentoClient = estabelecimentoClient;
+            _categoriaClient = categoriaClient;
         }
 
         /// <summary>
@@ -29,13 +30,12 @@ namespace TesteFitcard.UI.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
-        {
-           
+        {           
             var filtro = new EstabelecimentoFiltroViewModel()
             {
-                NomeFantasia = "Far"
+                RegistrosPorPagina = 30
             };
-            var data = _estabelecimentoClient.GetSelect("estabelecimento", filtro);
+            var data = _estabelecimentoClient.GetFiltro(filtro);
             return View(data);
         }
 
@@ -46,49 +46,107 @@ namespace TesteFitcard.UI.Controllers
         /// <returns></returns>
         public IActionResult Detalhes(string id)
         {
-
-            var data = _estabelecimentoClient.Get("estabelecimento", id);
+            var data = _estabelecimentoClient.Get(id);
             return View(data);
         }
 
-
-
-        public IActionResult Post()
+        /// <summary>
+        /// Exibe formulário para cadastro de novas estabelecimentos.
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Cadastrar()
         {
-
-            var estabelecimento = new EstabelecimentoViewModel()
-            {
-                RazaoSocial = "Teste de Cadastro",
-                CategoriaId = "735096bd-2cab-4384-b697-f612198cf5cc",
-                Cnpj = "00881753000153",
-                Email = "testecadastro@hotmail.com",
-                Ativo = true,
-                Excluido = false
-            };
-
-            var data = _estabelecimentoClient.Post("estabelecimento", estabelecimento);
-            return View(data);
+            var selectCategorias = _categoriaClient.GetSelect();
+            ViewBag.SelectCategorias = selectCategorias;
+            return View();
         }
 
-        public IActionResult Put()
+        /// <summary>
+        /// Recebe dados do formulário para inserção
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        //[ValidateInput]
+        [ValidateAntiForgeryToken]
+        public IActionResult Cadastrar(EstabelecimentoViewModel estabelecimentoViewModel)
         {
-
-            var estabelecimento = new EstabelecimentoViewModel()
+            if (ModelState.IsValid)
             {
-                Id = "963b3181-4728-4c0c-88d6-30ea1b3bf625",
-                RazaoSocial = "Supermercado",
-                Ativo = true,
-                Excluido = false
-            };
+                var data = _estabelecimentoClient.Post(estabelecimentoViewModel);
 
-            var data = _estabelecimentoClient.Put("estabelecimento", estabelecimento);
+                if (data != null)
+                {
+                    TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroSalvoSucesso);
+                    return RedirectToAction("Index");
+                }
+                
+                ViewBag.SelectCategorias = _categoriaClient.GetSelect();
+                TempData["mensagem"] = Mensagens.MensagemFalha(Resource.UmErroAconteceu);
+                return View();
+            }
+           
+            ViewBag.SelectCategorias = _categoriaClient.GetSelect();
+
+            return View();
+        }
+
+        /// <summary>
+        /// Método que busca os detalhes de uma estabelecimento a partir do seu id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult Editar(string id)
+        {
+            var selectCategorias = _categoriaClient.GetSelect();
+            ViewBag.SelectCategorias = selectCategorias;
+            var data = _estabelecimentoClient.Get(id);
             return View(data);
         }
 
+        /// <summary>
+        /// Recebe dados do formulário para atualização.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Editar(EstabelecimentoViewModel estabelecimentoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var data = _estabelecimentoClient.Put(estabelecimentoViewModel);
+
+                if (data != null)
+                {
+                    TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroAtualizadoSucesso);
+                    return RedirectToAction("Index");
+                }
+                ViewBag.SelectCategorias = _categoriaClient.GetSelect();
+                TempData["mensagem"] = Mensagens.MensagemFalha(Resource.UmErroAconteceu);
+                return View();
+            }
+            ViewBag.SelectCategorias = _categoriaClient.GetSelect();
+            return View();
+        }
+
+        /// <summary>
+        /// Recebe um id para realizar a remoção do registro.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Delete(string id)
         {
-            _estabelecimentoClient.Delete("estabelecimento", id);
-            return View();
+            try
+            {
+                _estabelecimentoClient.Delete(id);
+                TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroExcluidoSucesso);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["mensagem"] = Mensagens.MensagemFalha(e.Message.ToString());
+                return View();
+            }
         }
     }
 }

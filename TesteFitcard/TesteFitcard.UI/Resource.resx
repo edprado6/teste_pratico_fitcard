@@ -222,4 +222,31 @@
   <data name="UmErroAconteceu" xml:space="preserve">
     <value>Ops! Um erro aconteceu durante sua solicitação. </value>
   </data>
+  <data name="Dados" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="InformeCnpj" xml:space="preserve">
+    <value>Informe o CNPJ</value>
+  </data>
+  <data name="InformeEmail" xml:space="preserve">
+    <value>Informe o e-mail</value>
+  </data>
+  <data name="InformeEndereco" xml:space="preserve">
+    <value>Informe o endereço (rua, logradouro, etc)</value>
+  </data>
+  <data name="InformeNomeFantasia" xml:space="preserve">
+    <value>Informe o Nome Fantasia</value>
+  </data>
+  <data name="InformeRazaoSocial" xml:space="preserve">
+    <value>Informe a Razão Social</value>
+  </data>
+  <data name="Numero" xml:space="preserve">
+    <value>Numero</value>
+  </data>
+  <data name="SelecioneCategoria" xml:space="preserve">
+    <value>Selecione uma categoria</value>
+  </data>
+  <data name="Categoria" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
 </root>

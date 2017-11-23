@@ -33,7 +33,7 @@ namespace TesteFitcard.UI.Controllers
             {               
                 RegistrosPorPagina = 30
             };
-            var data = _categoriaClient.GetFiltro("categoria", filtro);
+            var data = _categoriaClient.GetFiltro(filtro);
             return View(data);
         }
 
@@ -56,7 +56,7 @@ namespace TesteFitcard.UI.Controllers
         {
             if (ModelState.IsValid) {
 
-                var data = _categoriaClient.Post("categoria", categoriaViewModel);
+                var data = _categoriaClient.Post(categoriaViewModel);
 
                 if (data != null)
                 {
@@ -78,7 +78,7 @@ namespace TesteFitcard.UI.Controllers
         /// <returns></returns>
         public IActionResult Editar(string id) {
 
-            var data = _categoriaClient.Get("categoria", id);
+            var data = _categoriaClient.Get(id);
             return View(data);
         }
 
@@ -92,7 +92,7 @@ namespace TesteFitcard.UI.Controllers
         {
             if (ModelState.IsValid) {
 
-                var data = _categoriaClient.Put("categoria", categoriaViewModel);
+                var data = _categoriaClient.Put(categoriaViewModel);
 
                 if (data != null)
                 {
@@ -114,7 +114,7 @@ namespace TesteFitcard.UI.Controllers
         /// <returns></returns>
         public IActionResult Detalhes(string id)
         {
-            var data = _categoriaClient.Get("categoria", id);
+            var data = _categoriaClient.Get(id);
             return View(data);
         }
 
@@ -127,7 +127,7 @@ namespace TesteFitcard.UI.Controllers
         {
             try {
 
-                _categoriaClient.Delete("categoria", id);
+                _categoriaClient.Delete(id);
                 TempData["mensagem"] = Mensagens.MensagemSucesso(Resource.RegistroExcluidoSucesso);
                 return RedirectToAction("Index");
             }

@@ -1,36 +1,42 @@
 ﻿@model TesteFitcard.DominioViewModel.Entidades.CategoriaViewModel
 
-<form asp-action="cadastrar">
+<form asp-action="cadastrar" id="formCategoria">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
+            
             <div class="x_panel">
                 <div class="x_title">
                     <h2><i class="fa fa-plus"></i> @Resource.Cadastrar</h2>
                     <div class="clearfix"></div>
                 </div>
 
-                <div class="x_content col-md-6 col-sm-6 col-xs-12">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <label asp-for="NomeCategoria">@Resource.NomeCategoria</label>
-                        <input asp-for="NomeCategoria" class="form-control" placeholder="@Resource.InformeCategoria" maxlength="45">
-                        <span asp-validation-for="NomeCategoria" class="text-danger"></span>
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>@Resource.Dados</h2>
+                        <div class="clearfix"></div>
                     </div>
+                    <div class="x_content col-md-6 col-sm-6 col-xs-12">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label asp-for="NomeCategoria">@Resource.NomeCategoria * </label>
+                            <input asp-for="NomeCategoria" class="form-control" placeholder="@Resource.InformeCategoria" maxlength="45">
+                            <span asp-validation-for="NomeCategoria" class="text-danger"></span>
+                        </div>
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Ativo">@Resource.Status</label>
-                        <p><input asp-for="Ativo" id="categoriaAtivo" data-on-text="@Resource.Ativo" data-off-text="@Resource.Inativo" data-off-color="danger" /></p>
+                        <div class="form-group col-md-3">
+                            <label asp-for="Ativo">@Resource.Status</label>
+                            <p><input asp-for="Ativo" id="categoriaAtivo" data-on-text="@Resource.Ativo" data-off-text="@Resource.Inativo" data-off-color="danger" /></p>
+                        </div>
+
                     </div>
-
                 </div>
-
-                <div class="x_content col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group col-md-12">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;@Resource.Salvar</button>
-                        <a asp-action="Index" title="@Resource.Cancelar" class="btn btn-danger"><i class="fa fa-close"></i>&nbsp;@Resource.Cancelar</a>
+                    <div class="x_content col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;@Resource.Salvar</button>
+                            <a asp-action="Index" title="@Resource.Cancelar" class="btn btn-danger"><i class="fa fa-close"></i>&nbsp;@Resource.Cancelar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </form>

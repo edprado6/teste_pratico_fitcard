@@ -162,13 +162,13 @@ namespace TesteFitcard.WebApi.Controllers
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>       
-        [HttpPost("select")]        
-        public IActionResult Select([FromBody]CategoriaFiltroViewModel filtro)
+        [HttpGet("select")]        
+        public IActionResult Select()
         {
             try
             {
-                CategoriaFiltro filter = _mapper.Map<CategoriaFiltroViewModel, CategoriaFiltro>(filtro);
-                return Ok(_categoriaServico.Select(filter));
+                //CategoriaFiltro filter = _mapper.Map<CategoriaFiltroViewModel, CategoriaFiltro>(filtro);
+                return Ok(_categoriaServico.Select());
             }
             catch (ArgumentNullException e)
             {

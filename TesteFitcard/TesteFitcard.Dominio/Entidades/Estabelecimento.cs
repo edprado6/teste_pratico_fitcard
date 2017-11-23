@@ -20,6 +20,6 @@ namespace TesteFitcard.Dominio.Entidades
         public string Ddd { get; set; }
         public string Telefone { get; set; }
         public string CategoriaId { get; set; }
-        public Categoria Categoria { get; set; }  
+        public virtual Categoria Categoria { get; set; }  
     }
 }

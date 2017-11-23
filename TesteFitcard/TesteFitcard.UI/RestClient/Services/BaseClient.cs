@@ -19,7 +19,7 @@ namespace TesteFitcard.UI.RestClient.Services
     public abstract class BaseClient<TEntity> : IBaseClient<TEntity> where TEntity : class
     {
         private string _urlBaseApi { get; set; }
-
+        protected string url { get; set; }
         private IConfigurationRoot _config { get; set; }
 
         /// <summary>
@@ -36,11 +36,10 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza uma chamada GET buscando um objeto pelo seu id.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>       
         /// <param name="id"></param>
         /// <returns></returns>
-        public TEntity Get(string url, string id)
+        public TEntity Get(string id)
         {
             string urlResource = _urlBaseApi + _config["urlsApi:" + url] + "/" + id;
 
@@ -59,11 +58,10 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza uma chamada GET buscando um objeto pelo seu id.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>        
         /// <param name="id"></param>
         /// <returns></returns>
-        public ResponseViewModel<TEntity> GetFiltro(string url, object filtro)
+        public ResponseViewModel<TEntity> GetFiltro(object filtro)
         {
             string urlResource = _urlBaseApi + _config["urlsApi:" + url] + "/" + _config["urlsApi:filtrar"];
 
@@ -83,11 +81,10 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza a inserção de novos registros.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>        
         /// <param name="obj"></param>
         /// <returns></returns>
-        public TEntity Post(string url, TEntity obj) {
+        public TEntity Post(TEntity obj) {
 
             string urlResource = _urlBaseApi + _config["urlsApi:" + url];
 
@@ -112,11 +109,10 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza UPDATE em uma entidade.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>        
         /// <param name="obj"></param>
         /// <returns></returns>
-        public TEntity Put(string url, TEntity obj) {
+        public TEntity Put(TEntity obj) {
 
             string urlResource = _urlBaseApi + _config["urlsApi:" + url];
 
@@ -136,10 +132,9 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza a remoção de elementos.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>       
         /// <param name="id"></param>
-        public void Delete(string url, string id) {
+        public void Delete(string id) {
 
             string urlResource = _urlBaseApi + _config["urlsApi:" + url] + "/" + id;
 
@@ -156,22 +151,19 @@ namespace TesteFitcard.UI.RestClient.Services
 
         /// <summary>
         /// Realiza uma chamada GET buscando um objeto pelo seu id.
-        /// </summary>
-        /// <param name="url"></param>
+        /// </summary>       
         /// <param name="id"></param>
         /// <returns></returns>
-        public IEnumerable<SelectListItem> GetSelect(string url, object filtro)
+        public IEnumerable<SelectListItem> GetSelect()
         {
             string urlResource = _urlBaseApi + _config["urlsApi:" + url] + "/" + _config["urlsApi:select"];
 
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri(urlResource);
-                var json = JsonConvert.SerializeObject(filtro);
-                var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+                client.BaseAddress = new Uri(urlResource);                
                 MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
                 client.DefaultRequestHeaders.Accept.Add(contentType);
-                HttpResponseMessage response = client.PostAsync(urlResource, content).Result;
+                HttpResponseMessage response = client.GetAsync(urlResource).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 var data = JsonConvert.DeserializeObject<IEnumerable<SelectListItem>>(stringData);
                 return data;

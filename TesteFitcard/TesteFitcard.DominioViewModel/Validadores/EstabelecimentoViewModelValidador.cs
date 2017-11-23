@@ -18,15 +18,16 @@ namespace TesteFitcard.DominioViewModel.Validadores
         public EstabelecimentoViewModelValidador()
         {            
             RuleFor(x => x.RazaoSocial)
-               .NotEmpty().WithMessage("O campo nome deve ser informado.");
+               .NotEmpty().WithMessage("O campo Razão Social deve ser informado.");
             
-            RuleFor(c => c.Email)
-             .NotEmpty().WithMessage("O campo e-mail deve ser informado.")
+            RuleFor(c => c.Email)            
              .EmailAddress().WithMessage("E-mail inválido.");
 
             RuleFor(c => c.Cnpj)
              .NotEmpty().WithMessage("O campo CNPJ deve ser informado.")
              .Must(VerificaCNPJ).WithMessage("CNPJ informado não é válido.");
+
+            RuleFor(c => c.CategoriaId).NotNull().WithMessage("A Categoria deve ser informada.");
         }
 
         /// <summary>

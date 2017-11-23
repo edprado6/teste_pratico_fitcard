@@ -23,6 +23,6 @@ namespace TesteFitcard.DominioViewModel.Entidades
         public string Ddd { get; set; }
         public string Telefone { get; set; }
         public string CategoriaId { get; set; }
-        public CategoriaViewModel Categoria { get; set; }
+        public virtual CategoriaViewModel Categoria { get; set; }
     }
 }

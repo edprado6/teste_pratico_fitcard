@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using TesteFitcard.Dominio.Entidades;
 using TesteFitcard.Dominio.Filtros;
+using TesteFitcard.DominioViewModel;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
 using TesteFitcard.Servico.Entidades.Interfaces;
@@ -36,14 +37,19 @@ namespace TesteFitcard.WebApi.Controllers
         /// </summary>
         /// <param name="filtroViewModel"></param>
         /// <returns></returns>              
-        [HttpGet]
-        public IActionResult Get(EstabelecimentoFiltroViewModel filtroViewModel)
+        [HttpPost("filtrar")]
+        public IActionResult Filtrar([FromBody]EstabelecimentoFiltroViewModel filtroViewModel)
         {
             try
             {
-                EstabelecimentoFiltro filtro = _mapper.Map<EstabelecimentoFiltroViewModel, EstabelecimentoFiltro>(filtroViewModel);
+                EstabelecimentoFiltro filtro = _mapper.Map<EstabelecimentoFiltroViewModel, EstabelecimentoFiltro>(filtroViewModel);                
                 var registros = _estabelecimentoServico.Filtra(filtro);
-                return Ok(new KeyValuePair<int, IEnumerable<EstabelecimentoViewModel>>(registros.Key, _mapper.Map<IEnumerable<Estabelecimento>, IEnumerable<EstabelecimentoViewModel>>(registros.Value)));
+                var responseViewModel = new ResponseViewModel<EstabelecimentoViewModel>()
+                {
+                    Total = registros.Key,
+                    Registros = _mapper.Map<IEnumerable<Estabelecimento>, IEnumerable<EstabelecimentoViewModel>>(registros.Value)
+                };
+                return Ok(responseViewModel);
             }
             catch (ArgumentNullException e)
             {

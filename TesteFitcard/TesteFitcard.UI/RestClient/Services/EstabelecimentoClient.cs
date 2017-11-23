@@ -17,7 +17,7 @@ namespace TesteFitcard.UI.RestClient.Services
         /// </summary>
         public EstabelecimentoClient()
         {
-
+            url = "estabelecimento";
         }
     }
 }

@@ -15,6 +15,6 @@ namespace TesteFitcard.Servico.Entidades.Interfaces
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        IEnumerable<SelectListItem> Select(CategoriaFiltro filtro);
+        IEnumerable<SelectListItem> Select();
     }
 }

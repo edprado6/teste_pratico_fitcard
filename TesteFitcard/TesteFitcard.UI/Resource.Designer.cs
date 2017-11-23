@@ -107,6 +107,15 @@ namespace TesteFitcard.UI {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Categoria.
+        /// </summary>
+        public static string Categoria {
+            get {
+                return ResourceManager.GetString("Categoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Categorias.
         /// </summary>
         public static string Categorias {
@@ -148,6 +157,15 @@ namespace TesteFitcard.UI {
         public static string Complemento {
             get {
                 return ResourceManager.GetString("Complemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Dados.
+        /// </summary>
+        public static string Dados {
+            get {
+                return ResourceManager.GetString("Dados", resourceCulture);
             }
         }
         
@@ -269,6 +287,51 @@ namespace TesteFitcard.UI {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informe o CNPJ.
+        /// </summary>
+        public static string InformeCnpj {
+            get {
+                return ResourceManager.GetString("InformeCnpj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informe o e-mail.
+        /// </summary>
+        public static string InformeEmail {
+            get {
+                return ResourceManager.GetString("InformeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informe o endereço (rua, logradouro, etc).
+        /// </summary>
+        public static string InformeEndereco {
+            get {
+                return ResourceManager.GetString("InformeEndereco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informe o Nome Fantasia.
+        /// </summary>
+        public static string InformeNomeFantasia {
+            get {
+                return ResourceManager.GetString("InformeNomeFantasia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informe a Razão Social.
+        /// </summary>
+        public static string InformeRazaoSocial {
+            get {
+                return ResourceManager.GetString("InformeRazaoSocial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Listagem.
         /// </summary>
         public static string Listagem {
@@ -292,6 +355,15 @@ namespace TesteFitcard.UI {
         public static string NomeFantasia {
             get {
                 return ResourceManager.GetString("NomeFantasia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Numero.
+        /// </summary>
+        public static string Numero {
+            get {
+                return ResourceManager.GetString("Numero", resourceCulture);
             }
         }
         
@@ -337,6 +409,15 @@ namespace TesteFitcard.UI {
         public static string Salvar {
             get {
                 return ResourceManager.GetString("Salvar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Selecione uma categoria.
+        /// </summary>
+        public static string SelecioneCategoria {
+            get {
+                return ResourceManager.GetString("SelecioneCategoria", resourceCulture);
             }
         }
         

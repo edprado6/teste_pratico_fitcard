@@ -1,5 +1,127 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model TesteFitcard.DominioViewModel.Entidades.EstabelecimentoViewModel
+@using TesteFitcard.Infra.Strings;
 @{
+    var estabelecimento = Model;   
 }
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2><i class="fa fa-search"></i> @Resource.Detalhes</h2>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content col-md-6 col-sm-6 col-xs-12">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Resource.Id:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt>
+                        @Resource.RazaoSocial:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.RazaoSocial)
+                    </dd>
+                    <dt>
+                        @Resource.NomeFantasia:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NomeFantasia)
+                    </dd>
+                    <dt>
+                        @Resource.CNPJ:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cnpj)
+                    </dd>
+                    <dt>
+                        @Resource.Email:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt>
+                        @Resource.Telefone:
+                    </dt>
+                    <dd>
+                        @Mascaras.RetornaTelefone(estabelecimento.Ddd, estabelecimento.Telefone)
+                    </dd>
+                    <dt>
+                        @Resource.CEP:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cep)
+                    </dd>
+                    <dt>
+                        @Resource.Endereco:
+                    </dt>
+                    <dd>
+                        @Mascaras.RetornaEndereco(estabelecimento.Endereco, estabelecimento.Numero, estabelecimento.Complemento)                       
+                    </dd>                    
+                    <dt>
+                        @Resource.Bairro:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Bairro)
+                    </dd>
+                    <dt>
+                        @Resource.Cidade:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cidade)
+                    </dd>
+                    <dt>
+                        @Resource.Estado:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Estado)
+                    </dd>
+                    <dt>
+                        @Resource.Categoria:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Categoria.NomeCategoria)
+                    </dd>
+                    <dt>
+                        @Resource.DataCadastro:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataCadastro)
+                    </dd>                
+                    <dt>
+                        @Resource.DataAtualizacao:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataAtualizacao)
+                    </dd>
+                    <dt>
+                        @Resource.Status:
+                    </dt>
+                    <dd>
+                        @Html.Raw(Mascaras.RetornaAtivoInativo(estabelecimento.Ativo))
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="x_content col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group col-md-12">
+                    <a href="~/estabelecimento/editar/@estabelecimento.Id" title="@Resource.Editar" class="btn btn-success"><i class="fa fa-pencil"></i>&nbsp;@Resource.Editar</a>
+                    <a asp-action="Index" title="@Resource.Cancelar" class="btn btn-danger"><i class="fa fa-close"></i>&nbsp;@Resource.Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

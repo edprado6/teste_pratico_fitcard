@@ -29,9 +29,12 @@ namespace TesteFitcard.Servico.Entidades.Servicos
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        public IEnumerable<SelectListItem> Select(CategoriaFiltro filtro)
+        public IEnumerable<SelectListItem> Select()
         {
-            
+            CategoriaFiltro filtro = new CategoriaFiltro()
+            {
+                Ativo = true
+            };
             var categorias = CategoriaRepository.Busca(filtro.Predicate);
             var select = categorias.Select(x => new SelectListItem()
             {

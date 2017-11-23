@@ -13,7 +13,7 @@ namespace TesteFitcard.UI.RestClient.Services
         /// </summary>
         public CategoriaClient()
         {
-
+            url = "categoria";
         }
     }
 }
