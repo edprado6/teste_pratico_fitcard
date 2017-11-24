@@ -15,7 +15,7 @@ namespace TesteFitcard.Repositorio.Interfaces
         /// Atualiza um registro.
         /// </summary>
         /// <param name="objeto"></param>
-        void Atualiza(TEntity objeto);
+        TEntity Atualiza(TEntity objeto);
 
         /// <summary>
         /// Retorna uma lista de acordo com o predicate informado.

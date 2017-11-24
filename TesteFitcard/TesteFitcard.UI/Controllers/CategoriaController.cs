@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Net;
 using TesteFitcard.DominioViewModel.Entidades;
 using TesteFitcard.DominioViewModel.Filtros;
 using TesteFitcard.Infra.Strings;
@@ -36,7 +37,7 @@ namespace TesteFitcard.UI.Controllers
             var data = _categoriaClient.GetFiltro(filtro);
             return View(data);
         }
-
+        
         /// <summary>
         /// Exibe formulário para cadastro de novas categorias.
         /// </summary>

@@ -25,12 +25,13 @@ namespace TesteFitcard.Repositorio.Repositorios
         /// Atualiza um registro.
         /// </summary>
         /// <param name="objeto"></param>
-        public void Atualiza(TEntity objeto)
+        public TEntity Atualiza(TEntity objeto)
         {
             using (var db = new Contexto())
             {
                 db.Entry(objeto).State = EntityState.Modified;
                 db.SaveChanges();
+                return objeto;
             }
         }
 

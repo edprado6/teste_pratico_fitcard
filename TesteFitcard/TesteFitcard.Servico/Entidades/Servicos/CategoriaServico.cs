@@ -44,5 +44,31 @@ namespace TesteFitcard.Servico.Entidades.Servicos
 
             return select;
         }
+
+        /// <summary>
+        /// Insere registro.
+        /// </summary>
+        /// <param name="categoria"></param>
+        public new Categoria Cadastra(Categoria categoria)
+        {
+            CategoriaFiltro filtro = new CategoriaFiltro()
+            {
+                NomeCategoria = categoria.NomeCategoria
+            };
+
+            var existeCategoria = CategoriaRepository.Busca(filtro.Predicate).FirstOrDefault();
+
+            if (existeCategoria != null)
+            {
+                categoria.Id = existeCategoria.Id;
+                categoria.Excluido = (categoria.Excluido) ? false : categoria.Excluido;
+               
+                return CategoriaRepository.Atualiza(categoria);
+            }
+            else {
+
+                return CategoriaRepository.Cadastra(categoria);
+            }            
+        }
     }
 }

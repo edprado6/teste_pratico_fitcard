@@ -20,6 +20,7 @@
     <Content Include="wwwroot\js\categoria\formCategoria.js" />
     <Content Include="wwwroot\js\estabelecimento\estabelecimento.js" />
     <Content Include="wwwroot\js\estabelecimento\formEstabelecimento.js" />
+    <Content Include="wwwroot\js\jquery.dataTables.min.js" />
     <Content Include="wwwroot\js\jquery.validate.min.js" />
     <Content Include="wwwroot\js\maskedinput.js" />
   </ItemGroup>
