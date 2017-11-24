@@ -62,6 +62,7 @@ namespace TesteFitcard.Servico.Entidades.Servicos
             {
                 categoria.Id = existeCategoria.Id;
                 categoria.Excluido = (categoria.Excluido) ? false : categoria.Excluido;
+                categoria.DataExclusao = null;
                
                 return CategoriaRepository.Atualiza(categoria);
             }

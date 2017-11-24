@@ -37,6 +37,7 @@ namespace TesteFitcard.Servico.Entidades.Servicos
             {
                 estabelecimento.Id = existeEstabelecimento.Id;
                 estabelecimento.Excluido = (estabelecimento.Excluido) ? false : estabelecimento.Excluido;
+                estabelecimento.DataExclusao = null;
 
                 return EstabelecimentoRepository.Atualiza(estabelecimento);
             }
